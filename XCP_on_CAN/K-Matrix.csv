@@ -1,0 +1,6 @@
+Msg ID,Msg Name,Data Length(Byte),Sender,Receiver,Send type
+0x666,Steering_Unit,4,Steering_Controller,"xx, xx, xx",Cyclic 25ms
+0x777,Motor_Unit,3,Motor_Controller,"xx, xx, xx",Cyclic 50ms
+0x235,FCA_Unit,4,FCA_Controller,"xx, xx, xx",On Change
+0x444,BMS_Unit,5,BMS_Controller,"xx, xx, xx",Cyclic 125ms
+0x333,HMI_Unit,5,HMI_Controller,"xx, xx, xx",Cyclic 600ms
