@@ -9,6 +9,7 @@
 
 ECU 이중화 _ 중재제어 영상
 https://youtu.be/oTrxxru4FOQ
+![SbW 프로젝트 중- ECU 이중화 _ 중재제어 0-21 screenshot](https://github.com/user-attachments/assets/be7e6c27-36bd-4c03-a00f-3b446a89b9e7)
 
 1. 아이템 식별 (Item Identification)
 •	아이템 이름: Steer-by-Wire (SbW) 시스템
