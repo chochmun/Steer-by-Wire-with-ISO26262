@@ -13,8 +13,8 @@ https://youtu.be/oTrxxru4FOQ
 
 1. 아이템 식별 (Item Identification)
 •	아이템 이름: Steer-by-Wire (SbW) 시스템
-•	아이템 설명: Steer-by-Wire 시스템은 물리적인 조향 장치(스티어링 칼럼)를 제거하고 전기 신호를 사용해 차량 바퀴를 조향하는 시스템입니다. 운전자의 핸들 조작을 센서로 감지하고 이를 기반으로 **전자 제어 장치(ECU)**가 조향각을 결정, **Road Wheel Actuator (RWA)**를 통해 실제로 바퀴를 회전시키며, **Steer Force Actuator (SFA)**를 통해 운전자에게 조향 피드백을 제공합니다.
-(자세한 내용은 SbW_ItemDefifnition.docx)
+•	아이템 설명: Steer-by-Wire 시스템은 물리적인 조향 장치(스티어링 칼럼)를 제거하고 전기 신호를 사용해 차량 바퀴를 조향하는 시스템입니다. 운전자의 핸들 조작을 센서로 감지하고 이를 기반으로 **전자 제어 장치(ECU)**가 조향각을 결정, **Road Wheel Actuator (RWA)**를 통해 실제로 바퀴를 회전시키며, Steer Force Actuator (SFA)를 통해 운전자에게 조향 피드백을 제공합니다.
+(자세한 내용은 SbW_ItemDefifnition.docx 파일을 확인)
 
 ###  FEMA "Failure Mode and Effects Analysis" and HARA 방법
 ![image](https://github.com/user-attachments/assets/7fc601bd-8c09-4e87-898e-bf1c2e495c89)
