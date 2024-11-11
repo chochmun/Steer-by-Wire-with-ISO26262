@@ -7,6 +7,8 @@
 ### CAN 통신 구현 검증래프
 ![can통신구현](https://github.com/user-attachments/assets/b54a87a1-e397-42d8-a33b-05cedcce5dde)
 
+ECU 이중화 _ 중재제어 영상
+https://youtu.be/oTrxxru4FOQ
 
 1. 아이템 식별 (Item Identification)
 •	아이템 이름: Steer-by-Wire (SbW) 시스템
