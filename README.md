@@ -1,5 +1,6 @@
 ### 시스템설계_전체
-![시스템설계_전체](https://github.com/user-attachments/assets/272d3ec2-2e81-4551-b6b8-c392c7225a88)
+![sbw_semi_complete](https://github.com/user-attachments/assets/107f6f1b-5fe9-4412-a992-dd66a443cf6d)
+
 
 ### 차속에따른 가변조향비 모델링 검증그래프
 ![차속에따른 가변조향비 모델링 검증그래프](https://github.com/user-attachments/assets/62fb6b4b-4d4b-43c8-916b-a0468a7c2a7a)
