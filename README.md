@@ -17,5 +17,15 @@ https://youtu.be/oTrxxru4FOQ
 •	아이템 설명: Steer-by-Wire 시스템은 물리적인 조향 장치(스티어링 칼럼)를 제거하고 전기 신호를 사용해 차량 바퀴를 조향하는 시스템입니다. 운전자의 핸들 조작을 센서로 감지하고 이를 기반으로 **전자 제어 장치(ECU)**가 조향각을 결정, **Road Wheel Actuator (RWA)**를 통해 실제로 바퀴를 회전시키며, Steer Force Actuator (SFA)를 통해 운전자에게 조향 피드백을 제공합니다.
 (자세한 내용은 SbW_ItemDefifnition.docx 파일을 확인)
 
-###  FEMA "Failure Mode and Effects Analysis" and HARA 방법
-![image](https://github.com/user-attachments/assets/7fc601bd-8c09-4e87-898e-bf1c2e495c89)
+## 안전 케이스 도출
+### HARA
+![image](https://github.com/user-attachments/assets/dd0b58f7-72e8-4309-a47d-68ca20e9d506)
+### Safety Goal
+![image](https://github.com/user-attachments/assets/2311ae4d-ac84-448f-a3cf-45fe4ceb7cd6)
+### FSR
+![image](https://github.com/user-attachments/assets/74b6b434-f214-4eaa-be4e-3b687b0cd7d0)
+### 예비 아키텍쳐
+![image](https://github.com/user-attachments/assets/fccf64b9-80c2-4815-bb80-4f452490753b)
+
+### TSR (개발 가능한 범위의 4개의 요구사항을 집중함)
+![image](https://github.com/user-attachments/assets/29e1c734-687e-4032-a3bf-829160d5388e)
