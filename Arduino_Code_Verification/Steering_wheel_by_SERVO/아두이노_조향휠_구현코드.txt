@@ -1,0 +1,80 @@
+#include <Servo.h>
+
+Servo myservo;
+unsigned long lastMoveTime = 0;  // 마지막으로 모터가 움직인 시간을 저장할 변수
+const unsigned long idleTimeThreshold = 50;  // 움직임이 없을 때 대기할 시간
+float currentAngle = 90;  // 초기 각도 설정
+int previousData = -1;  // 이전 저항값을 저장할 변수
+int targetAngle = 90;  // 목표 복귀 각도
+int vehicle_speed = 3;  // 초기값, 1~10 범위로 가정
+bool isServoAttached = false;  // 서보가 현재 attach 상태인지 확인하는 변수
+
+void setup() {
+  Serial.begin(9600);
+  myservo.attach(9);
+  myservo.write(90);  // 초기 각도 설정
+  delay(50);
+  myservo.detach();  // 초기화 후 detach하여 대기 상태로 설정
+  isServoAttached = false;
+  lastMoveTime = millis();  // 시작 시점을 기록
+}
+
+void loop() {
+  // vehicle_speed 값을 Serial 입력으로 설정
+  if (Serial.available()) {
+    int inputSpeed = Serial.parseInt();  // Serial로 입력된 정수를 읽음
+    if (inputSpeed >= 0 && inputSpeed <= 10) {  // 0~10 범위의 유효한 값 확인
+      vehicle_speed = inputSpeed;
+      Serial.print("설정된 vehicle_speed = ");
+      Serial.println(vehicle_speed);
+    } else {
+      Serial.println("유효하지 않은 값입니다. 0에서 10 사이로 입력하세요.");
+    }
+  }
+
+  int data = analogRead(A0);  // 저항값을 읽음
+  int degree = map(data, 56, 596, 0, 180);  // 저항값을 각도로 변환
+  currentAngle = degree;
+
+  // 저항값이 이전값과 ±2 이상 차이 날 때만 갱신
+  if (abs(data - previousData) > 2) {
+    Serial.print("현재 각도 = ");
+    Serial.print(degree);
+    Serial.print(", 저항값 = ");
+    Serial.println(data);
+    lastMoveTime = millis();  // 사용자 입력으로 인해 시간을 갱신
+    previousData = data;  // 이전 저항값 갱신
+  }
+
+  // 일정 시간 동안 움직임이 없으면 목표 위치로 복귀 시작
+  if (millis() - lastMoveTime >= idleTimeThreshold) {
+    if (!isServoAttached) { 
+      myservo.attach(9);  // 서보 모터를 활성화
+      myservo.write(currentAngle);  // 현재 각도를 유지
+      isServoAttached = true;
+    }
+    
+    delay(30);  // 30ms마다 각도 조절
+    int step = vehicle_speed;  // vehicle_speed에 따른 회전 속도 설정
+
+    // 현재 각도가 목표 각도보다 작으면 오른쪽으로 이동, 크면 왼쪽으로 이동
+    if (currentAngle < targetAngle) {
+      currentAngle += step;
+      if (currentAngle > targetAngle) currentAngle = targetAngle;
+    } else if (currentAngle > targetAngle) {
+      currentAngle -= step;
+      if (currentAngle < targetAngle) currentAngle = targetAngle;
+    }
+    
+    myservo.write(currentAngle);  // 목표 위치로 점진적으로 이동
+    Serial.print("모터 각도 복귀 중 = ");
+    Serial.println(currentAngle);
+
+    // 목표 위치에 도달하면 복귀 중지 및 대기 상태로 전환
+    if (currentAngle == targetAngle) {
+      myservo.detach();  // 모터를 다시 대기 상태로 만듦
+      isServoAttached = false;
+      Serial.println("목표 위치에 도달하여 복귀 완료.");
+    }
+  }
+}
