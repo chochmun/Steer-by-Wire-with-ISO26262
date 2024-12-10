@@ -1,6 +1,6 @@
-###MCU redundancy 실시간(RT) 구현
+### MCU redundancy 실시간(RT) 구현
 ![realtime SBW( steer by wire) with MCU redundancy 0-14 screenshot](https://github.com/user-attachments/assets/aba77c9c-0642-477f-a638-bb9b284e5876)
-
+https://www.youtube.com/watch?v=_AG2EzErbf4&feature=youtu.be
 
 ### 시스템설계_전체
 ![sbw_semi_complete](https://github.com/user-attachments/assets/107f6f1b-5fe9-4412-a992-dd66a443cf6d)
